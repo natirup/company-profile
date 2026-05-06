@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +11,25 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+
+use Illuminate\Support\Facades\Route;
+
+// Halaman Beranda
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Halaman Tentang Kami
+Route::get('/tentang', function () {
+    return view('about');
+});
+
+// Halaman Layanan
+Route::get('/layanan', function () {
+    return view('services');
 });
