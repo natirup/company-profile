@@ -30,9 +30,13 @@ Route::get('/tentang', function () {
 });
 
 // Halaman Layanan
-Route::get('/layanan', function () {
+/*Route::get('/layanan', function () {
     return view('services');
-});
+});*/
+use App\Http\Controllers\CompanyController;
+
+Route::get('/layanan', [CompanyController::class, 'services']);
+
 
 // Halaman Kontak
 Route::get('/kontak', function () {

@@ -9,13 +9,18 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl border border-gray-100 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                    <svg class="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="id-9.75 17L9 21l-1 1h8l-1-1-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Web Development</h3>
-                <p class="text-gray-500 leading-relaxed">Membangun website yang cepat, responsif, dan SEO-friendly untuk meningkatkan kehadiran digital Anda.</p>
-            </div>
+    @foreach($daftarLayanan as $item)
+    <div class="p-8 rounded-3xl border border-gray-100 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+        <div class="w-14 h-14 bg-{{ $item['warna'] }}-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-{{ $item['warna'] }}-600 transition-colors">
+            <svg class="w-8 h-8 text-{{ $item['warna'] }}-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"></path>
+            </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4">{{ $item['judul'] }}</h3>
+        <p class="text-gray-500 leading-relaxed">{{ $item['deskripsi'] }}</p>
+    </div>
+    @endforeach
+</div>
 
             <div class="p-8 rounded-3xl border border-gray-100 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
                 <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors">
