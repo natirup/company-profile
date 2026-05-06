@@ -33,3 +33,8 @@ Route::get('/tentang', function () {
 Route::get('/layanan', function () {
     return view('services');
 });
+
+// Halaman Kontak
+Route::get('/kontak', function () {
+    return view('contact');
+});
